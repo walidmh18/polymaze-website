@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>POLYMAZE</title>
+   <link rel="stylesheet" href="./style.css">
+   <script src="./app.js" defer></script>
+   <script type="module" src="https://unpkg.com/@splinetool/viewer/build/spline-viewer.js"></script>
+<link rel="stylesheet" href="./headerStyle.css">
+   <style>
+      spline-viewer{
+         height: 100vh;
+      }
+      #container{
+         background: #000;
+      }
+      #logo{
+         display: none !important;
+      }
+   </style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+
+   <header class="hideOnMobile">
+      <a href="./"><img src="../assets/logo h-02.png" alt="POLYMAZE" /></a>
+      <nav>
+        <a href="../#home" class="navLink">Home</a>
+        <a href="../#polymaze" class="navLink">Polymaze</a>
+        <a href="../#testimonials" class="navLink">Testimonials</a>
+        <a href="../#register" class="navLink active">Registration</a>
+        <a href="../#contact" class="navLink">Contact</a>
+      </nav>
+    </header>
+
+      <header class="showOnMobile">
+
+      <div class="fixedWrapper">
+        <a href="./"><img src="../assets/logo h-02.png" alt="POLYMAZE" /></a>
+        <button type="button" class="navToggleWrapper" onclick="navToggle()">
+          
+        </button>
+      </div>
+      <nav>
+        <a href="../#home" class="navLink">Home</a>
+        <a href="../#polymaze" class="navLink">Polymaze</a>
+        <a href="../#testimonials" class="navLink">Testimonials</a>
+        <a href="../#register" class="navLink active">Registration</a>
+        <a href="../#contact" class="navLink">Contact</a>
+      </nav>
+    </header>
+
+   <section id="home" class="hasLights">
+      <div class="left">
+         <h1><span>POLYMAZE</span> is here to throw down the gauntlet for robotics enthusiasts!</h1>
+         <p>Test your skills in <span>mechanics, electronics, robotics and automatics</span> to design and build a robot that can take on a challenging maze completed with intricate pathways and unexpected turns. <span>The Maze is a Beast</span></p>
+         <a href="#register" class="registerBtn"><span>Register Now!</span><i class="fa-solid fa-arrow-right"></i></a>
+
+      </div>
+      <div class="right">
+         <spline-viewer url="https://prod.spline.design/29-snElDnoywHTbn/scene.splinecode" events-target="local"></spline-viewer>
+
+      </div>
+
+   </section>
+   <section id="countdown">
+      <div class="overlay"></div>
+      <h2>Time for registrations to close:</h2>
+      <div class="container">
+         <div class="days">
+            <p>10</p>
+         </div>
+         <div class="hours">
+            <p>10</p>
+         </div>
+         <div class="minutes">
+            <p>10</p>
+         </div>
+         <div class="seconds">
+            <p>10</p>
+         </div>
+      </div>
+   </section>
+   
+
+
+   <section id="polymaze" class="hasLights">
+      <h2 class="sectionTitle">What is Polymaze?</h2>
+
+      <p class="textanim">POLYMAZE is a maze-solving competition hosted by the Vision & Innovation Club. Designed robots rely on their programming and sensors to independently navigate the maze, showcasing impressive robotic abilities.</p>
+
+
+      <div class="slider slider1">
+         <div class="overlay"></div>
+         <div class="container">
+            <img src="./assets/images/sliders/1.jpg" alt="">
+            <img src="./assets/images/sliders/2.jpg" alt="">
+            <img src="./assets/images/sliders/3.jpg" alt="">
+            <!-- <img src="./assets/images/sliders/4.jpg" alt=""> -->
+            <img src="./assets/images/sliders/5.jpg" alt="">
+            <img src="./assets/images/sliders/6.jpg" alt="">
+            <img src="./assets/images/sliders/7.jpg" alt="">
+            <img src="./assets/images/sliders/8.jpg" alt="">
+         </div>
+      </div>
+      <div class="slider slider2">
+         <div class="overlay"></div>
+         <div class="container">
+            <!-- <img src="./assets/images/sliders/9jpg" alt=""> -->
+            <img src="./assets/images/sliders/10.jpg" alt="">
+            <img src="./assets/images/sliders/11.jpg" alt="">
+            <!-- <img src="./assets/images/sliders/4.jpg" alt=""> -->
+            <img src="./assets/images/sliders/12.jpg" alt="">
+            <img src="./assets/images/sliders/13.jpg" alt="">
+            <img src="./assets/images/sliders/14.jpg" alt="">
+            <img src="./assets/images/sliders/15.jpg" alt="">
+            <img src="./assets/images/sliders/16.jpg" alt="">
+         </div>
+      </div>
+
+      <h2 class="sectionTitle">What&apos;s new in POLYMAZE <span><img src="./assets/24.svg" alt=""></span> ?</h2>
+
+      <p class="textanim">We haven't made a ton of changes to the fundamental structure, the rules, robot specifications, and registration process stay the same. However, here's the exciting part: POLYMAZE will be in two days this year! The first day will consist of the qualification rounds, while the second day will feature the semi finals and the finals.The dates are going to be announced on our site and all over our social media platforms.</p>
+
+
+   </section>
+
+   <section id="register">
+      <h2 class="sectionTitle">How to participate in POLYMAZE?</h2>
+
+      <div class="container">
+         <h3 data-num="1">Read the specifications document</h3>
+         <p>it will provide you with the competition rules including the restrictions of the robot.
+            You have to respect it otherwise you will be eliminated from polymaze. It also puts on your disposal details about this edition’s theme , the goal of the competition, the minigames and many more. So be sure to go through it carefully!
+            </p>
+            <h3 data-num="2">Filling out the form</h3>
+            <p> to register, fill out the registration form shared in the site to secure your spot</p>
+            <h3 data-num="3">Prepare your robot and join the Polymaze fam</h3>
+            <p>design and build your masterpiece and put it in action.</p>
+
+      </div>
+      <a href="./register" class="registerBtn"><span>Register Now!</span><i class="fa-solid fa-arrow-right"></i></a>
+
+   </section>
+
+   <section id="faq">
+      <h2 class="sectionTitle">Frequently asked questions</h2>
+
+      <div class="container">
+         <div class="el">
+            <div class="question">
+               asdfasdf
+            </div>
+            <div class="answer">
+               as;dlfkas;dlfkj
+            </div>
+         </div>
+         <div class="el">
+            <div class="question">
+               asdfasdf
+            </div>
+            <div class="answer">
+               as;dlfkas;dlfkj
+            </div>
+         </div>
+         <div class="el">
+            <div class="question">
+               asdfasdf
+            </div>
+            <div class="answer">
+               as;dlfkas;dlfkj
+            </div>
+         </div>
+      </div>
+   </section>
+</body>
+</html>

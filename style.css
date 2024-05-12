@@ -1,0 +1,388 @@
+@font-face {
+   font-family: 'Coolvetica';
+   font-style: normal;
+   font-weight: normal;
+   src: local('Coolvetica'), url('./assets/font/coolvetica/coolvetica\ rg.otf') format('opentype');
+ }
+
+
+
+:root{
+
+   /* colors */
+
+   --dark1: #040404;
+   --dark2: #121432;
+   --red: #FF1432;
+   --blue: #0068FF;
+   --light1: #F0F0FF;
+   --accent-color: #FFC470;
+
+}
+
+
+
+*{
+   font-family: 'Coolvetica', sans-serif;
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+   
+}
+
+::selection{
+   background: var(--accent-color);
+   color: var(--light1);
+}
+body{
+   background: var(--dark1);
+   color: var(--light1);
+   overflow-x: hidden;
+   font-size: 17px;
+}
+h1{
+   letter-spacing: 2px;
+   font-size: 2em;
+}
+p{
+   font-size: 1.2em;
+}
+a,button{
+   all: unset;
+   cursor: pointer;
+   display: inline-block;
+}
+span{
+   color: var(--accent-color);
+}
+
+
+section{
+   padding: 1em clamp(2em, 10vw, 15em);
+   margin: 10vh 0;
+}
+
+.logoContainer{
+   height: 300vh;
+}
+
+.logoContainer img{
+   position: fixed;
+   top: 0;
+}
+
+.registerBtn{
+   background: var(--accent-color);
+   border-radius: 1em;
+   border: var(--accent-color) 2px solid;
+   transition: 0.3s;
+   padding: 1em 2rem;
+   font-size: 1.2em;
+
+}
+
+.registerBtn span{
+   color: var(--light1);
+   margin-right: 0.8rem;
+   transition: 0.3s;
+}
+.registerBtn:hover{
+   color: var(--accent-color);
+   background: none;
+   padding: 1em 1.3rem 1em 2rem;
+
+}
+
+.registerBtn:hover span{
+   margin-right: 1.5rem;
+   color: var(--accent-color);
+}
+
+@keyframes text-reveal {
+   to{
+      background-size: 100% 100%;
+   }
+}
+
+
+h2.sectionTitle{
+   font-size: 2.4em;
+   margin: .5rem 0 1.5em;
+   color: var(--accent-color);
+   position: relative;
+   padding: 0.5em 0;
+   letter-spacing: 1px;
+}
+
+h2.sectionTitle::after{
+   content: '';
+   background-color: var(--accent-color);
+   position: absolute;
+   height: 0.15em;
+   width: 120px;
+   border-radius: 100vmax;
+   left: 0;
+   bottom: 0;
+
+}
+
+h2 img{
+   height: 1em;
+   fill: var(--accent-color);
+
+}
+
+/* home section styling */
+
+
+#home{
+   display: grid;
+   grid-template-columns: repeat(2,1fr);
+   align-items: center;
+   gap: 3em;
+   height: 100vh;
+   position: relative;
+}
+
+section.hasLights{
+   position: relative;
+}
+
+section.hasLights::after, section.hasLights::before{
+   content: '';
+   position: absolute;
+   width: 150vh;
+   height: 150vh;
+   opacity: 0.1;
+   z-index: -5;
+   filter: blur(10px);
+}
+
+section.hasLights::after{
+   background: radial-gradient(var(--blue), #00000000 70%);
+   
+   bottom: -70vh;
+   left: -70vh;
+}
+
+section.hasLights::before{
+   background: radial-gradient(var(--red), #00000000 70%);
+   top: -70vh;
+   right: -70vh;
+   z-index: 5;
+
+}
+
+#home h1{
+   font-size: 2.5em;
+   margin-bottom: 1.8em;
+}
+
+#home p{
+   /* font-size: 1.5em; */
+   margin-bottom: 1.8em;
+}
+
+#countdown{
+   padding: 10vh ;
+   min-height: 40vh;
+   background: url(./assets/images/winners.JPG);
+   background-size: cover;
+   background-position: 100% 30%;
+   position: relative;
+}
+
+#countdown .overlay{
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   /* background: var(--dark2); */
+   /* opacity: 0.6; */
+   left: 0;
+   top: 0;
+   background: #121432ac;
+   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+   backdrop-filter: blur(6.9px);
+   -webkit-backdrop-filter: blur(6.9px);
+   z-index: 0;
+}
+
+#countdown h2{
+   margin-bottom: 1em;
+
+}
+
+#countdown .container, #countdown h2{
+   z-index: 20;
+   position: relative;
+   text-align: center;
+   font-size: 2.4em;
+   font-weight: 400;
+}
+
+#countdown .container{
+
+   display: flex;
+   gap: 5rem;
+   font-size: 5rem;
+   justify-content: center;
+   margin-bottom: 0.5rem;
+}
+
+#countdown .container p{
+   position: relative;
+}
+
+#countdown .container p:after{
+   content: 'ad';
+   color: var(--accent-color);
+   font-size: 2rem;
+   font-weight: 400;
+   position: absolute;
+   left: 50%;
+   transform: translateX(-50%);
+   bottom: -1rem;
+}
+
+#countdown .container .days p:after{
+   content: 'days';
+}
+
+#countdown .container .hours p:after{
+   content: 'hours';
+}
+
+#countdown .container .minutes p:after{
+   content: 'minutes';
+}
+
+#countdown .container .seconds p:after{
+   content: 'seconds';
+}
+
+
+
+/* POLYMAZE section styling */
+
+
+#polymaze p{
+   display: inline;
+   font-size: 1.6em;
+}
+
+
+#polymaze .sectionTitle{
+   margin-top: 5rem;
+}
+
+#polymaze .slider{
+   position: relative;
+   /* transform: rotate(-7deg); */
+}
+#polymaze .slider1{
+   margin-top: 7rem;
+
+}
+
+#polymaze .slider2{
+   margin-bottom: 7rem;
+}
+
+#polymaze .slider .container::-webkit-scrollbar {
+   height: 0;
+ }
+ 
+
+#polymaze .slider .container{
+   display: flex;
+   gap: 1rem;
+   margin: 1rem;
+   overflow-x: scroll;
+}
+
+
+
+#polymaze .slider img{
+   width: 300px;
+   border-radius: 0.6rem;
+}
+
+#polymaze .overlay{
+   
+   width: 100%;
+   height: 100%;
+   left: 0;
+   background: linear-gradient(to right, var(--dark1)  0%, #00000000 20% , #00000000 80% , var(--dark1) 100%);
+   /* background: linear-gradient(to right,red 70%, blue); */
+   position: absolute;
+}
+
+/* register styling */
+
+#register p{
+   font-size: 1.6em;
+   padding: 0.5em 4rem 1em;
+   margin:  1.5em 2rem ;
+}
+
+#register p:not(:last-child){
+   border-left: var(--accent-color) 4px solid;
+}
+
+
+#register h3{
+   font-size: 2em;
+   padding: 0 5.5rem;
+   position: relative;
+}
+
+#register h3::after{
+   position: absolute;
+   content: attr(data-num);
+   color: var(--light1);
+   background: var(--accent-color);
+   border-radius: 100vmax;
+   width: 2em;
+   height: 2em;
+   display: grid;
+   place-items: center;
+   top: 50%;
+   left: 0;
+   transform: translateY(-50%);
+}
+
+#register .registerBtn{
+   float: right;
+}
+
+
+
+/* faq styling */
+
+#faq .container{
+   display: flex;
+   flex-direction: column;
+   gap: 2em;
+   justify-content: center;
+}
+#faq .el{
+   max-width: 70em;
+   background: #12143245;
+   width: 100%;
+   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+   backdrop-filter: blur(6.9px);
+   -webkit-backdrop-filter: blur(6.9px);
+   margin: auto;
+   border: 1px solid #161616;
+   border-radius: 1em;
+}
+
+
+#faq .el .question , #faq .el .answer{
+
+   padding: 2rem 2.5rem 2rem 4rem;
+}
+
+#faq .el .question{
+   font-size: 2em;
+}
