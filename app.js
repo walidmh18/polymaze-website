@@ -43,3 +43,14 @@ function sliderScroll(slider, speed, y){
 //    }, 1200);
 
 
+
+// COUNTDOWN ----
+
+const regsCloseDate = new Date(2024,4,29)
+
+let regsClosets = regsCloseDate.getTime()
+console.log(regsClosets - new Date().getTime());
+
+
+
+

@@ -16,7 +16,8 @@
    --red: #FF1432;
    --blue: #0068FF;
    --light1: #F0F0FF;
-   --accent-color: #FFC470;
+   /* --accent-color: #FFC470; */
+   --accent-color: #e83d83;
 
 }
 
@@ -59,7 +60,7 @@ span{
 
 section{
    padding: 1em clamp(2em, 10vw, 15em);
-   margin: 10vh 0;
+   margin: 0 0 10vh ;
 }
 
 .logoContainer{
