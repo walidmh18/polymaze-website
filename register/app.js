@@ -250,12 +250,3 @@ function sendEmail(obj ,email){
 
 
 
-
-
-// faq show
-
-const faq = document.querySelectorAll('#faq .el');
-
-function showFaq(faq,){
-
-}

@@ -20,8 +20,8 @@ addEventListener('scroll', () => {
       slider2.scrollTo((slider2.scrollWidth / 2) - (slider2.offsetWidth /2) + d/3,0)
       // slider1.scroll(100/5,Y)
       // console.log(p,d, slider1.scrollWidth,polymaze.offsetTop ,Y);
-      console.log(((slider2.scrollWidth / 2) - (slider2.offsetWidth /2),0) -d);
-      console.log(((slider2.scrollWidth / 2) - (slider2.offsetWidth /2),0) +d);
+      // console.log(((slider2.scrollWidth / 2) - (slider2.offsetWidth /2),0) -d);
+      // console.log(((slider2.scrollWidth / 2) - (slider2.offsetWidth /2),0) +d);
 
 
    }
@@ -54,3 +54,140 @@ console.log(regsClosets - new Date().getTime());
 
 
 
+
+function countdown(t){
+   
+      let dt = (t - new Date().getTime())/1000;
+      let d = Math.floor(dt/(24*60*60))
+      let hours = (dt%(24*60*60))/(60*60)
+      let h = Math.floor(hours)
+      let minutes = (hours-h)*60
+      let m = Math.floor(minutes)
+      let seconds = (minutes-m)*60
+      let s = Math.floor(seconds)
+
+      // console.log(d,h,m,s);
+
+      return{d:d,h:h,m:m,s:s}
+}
+
+
+const dc = document.querySelector('#countdown .days p')
+const hc = document.querySelector('#countdown .hours p')
+const mc = document.querySelector('#countdown .minutes p')
+const sc = document.querySelector('#countdown .seconds p')
+
+
+setInterval(() => {
+   let time = countdown(regsClosets)
+   // console.log(countdown(regsClosets));
+   dc.innerHTML = time.d
+   hc.innerHTML = time.h
+   mc.innerHTML = time.m
+   sc.innerHTML = time.s
+}, 1000);
+
+
+let dirs =[]
+
+
+// faq show
+
+
+
+
+
+
+const faqs = document.querySelectorAll('#faq .el');
+
+console.log([...faqs]);
+
+function showFaq(faq){
+   let activeFaqs = document.querySelectorAll('#faq .el.active');
+   activeFaqs.forEach(a=>{
+      if (a != faq) {
+         showFaq(a)
+      }
+   })
+   let index = [...faqs].indexOf(faq)
+   console.log(faq);
+   let faqAnswer = faq.querySelector('.answer')
+   let faqQuestion = faq.querySelector('.question')
+   if (faq.classList.contains('active')){
+      faq.style.height = faqQuestion.offsetHeight + 'px';
+      faq.classList.remove('active')
+      
+   } else {
+      console.log(faqAnswer.offsetHeight + faqQuestion.offsetHeight);
+      faq.style.height = faqAnswer.offsetHeight + faqQuestion.offsetHeight + 'px'
+      faq.classList.add('active')
+
+   }
+
+   console.log(activeFaqs);
+   navToggleAnim(dirs[index], faq, index)
+   dirs[index] *= -1
+
+   
+}
+
+console.log('walid');
+
+
+const faqWrappers = document.querySelectorAll("#faq .el") 
+const faqWrappertest = document.querySelector("#faq .el .plusSign") 
+
+console.log(faqWrappertest);
+
+// let animDirection = 1
+let anims = []
+faqWrappers.forEach(wrapper =>{
+   let answer = wrapper.querySelector('.answer')
+   let question = wrapper.querySelector('.question')
+   let animaItem = lottie.loadAnimation({
+      container: wrapper.querySelector('.plusSign'),
+      renderer: 'svg',
+      loop: false,
+      autoplay: false,
+   
+      path: "./assets/Plus to X/plusToX.json"
+   });
+   console.log(animaItem);
+   anims.push(animaItem)
+   dirs.push(1)
+   wrapper.style.height = question.offsetHeight + 'px';
+
+   console.log(answer.offsetHeight , answer.clientHeight);
+})
+
+
+
+
+function navToggleAnim(dir , element, i) {
+   anims[i].setDirection(dir)
+   anims[i].play()
+}
+
+
+// swiper
+
+var swiper = new Swiper(".mySwiper", {
+   slidesPerView: 3,
+   spaceBetween: 30,
+   centeredSlides: true,
+   loop:true,
+   autoplay: {
+     delay: 10000,
+     disableOnInteraction: false,
+   },
+   pagination: {
+     el: ".swiper-pagination",
+     clickable: true,
+   dynamicBullets: true,
+     
+   },
+   navigation: {
+     nextEl: ".swiper-button-next",
+     prevEl: ".swiper-button-prev",
+   },
+ });

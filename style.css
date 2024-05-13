@@ -5,7 +5,28 @@
    src: local('Coolvetica'), url('./assets/font/coolvetica/coolvetica\ rg.otf') format('opentype');
  }
 
+ @font-face {
+   font-family: 'Coolvetica light';
+   font-style: normal;
+   font-weight: normal;
+   src: local('Coolvetica'), url('./assets/font/coolvetica/coolvetica\ condensed\ rg.otf') format('opentype');
+ }
 
+
+
+::-webkit-scrollbar{
+   width: 0.5em;
+}
+
+::-webkit-scrollbar-track{
+   background: none;
+
+}
+
+::-webkit-scrollbar-thumb{
+   background: var(--accent-color);
+   border-radius: 5px;
+}
 
 :root{
 
@@ -363,27 +384,157 @@ section.hasLights::before{
 #faq .container{
    display: flex;
    flex-direction: column;
-   gap: 2em;
+   gap: 1em;
    justify-content: center;
 }
 #faq .el{
    max-width: 70em;
-   background: #12143245;
+   /* background: #12143245; */
    width: 100%;
-   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-   backdrop-filter: blur(6.9px);
-   -webkit-backdrop-filter: blur(6.9px);
+   /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); */
+   /* backdrop-filter: blur(6.9px); */
+   /* -webkit-backdrop-filter: blur(6.9px); */
+   /* border: 1px solid #161616; */
    margin: auto;
-   border: 1px solid #161616;
-   border-radius: 1em;
+   border-bottom: var(--accent-color) solid 1px;
+   display: flex;
+   overflow-y: hidden;
+   transition: 0.3s;
+   /* border-radius: 1em; */
 }
 
+/* #faq .el.active{
+   height: unset;
+} */
 
-#faq .el .question , #faq .el .answer{
+#faq .el .question ,#faq .el .plusSign{
+   cursor: pointer;
+}
+#faq .el .question , #faq .el .answer,#faq .el .plusSign{
 
-   padding: 2rem 2.5rem 2rem 4rem;
+   padding: 2rem 1.5rem ;
+}
+
+#faq .el .answer{
+   font-size: 1.6em;
+   font-weight: 300;
+   font-family: 'Coolvetica light', sans-serif;
+   letter-spacing: 1px;
 }
 
 #faq .el .question{
    font-size: 2em;
+   padding: 2rem 1.5rem;
+   
+}
+
+#faq .el .content{
+   flex-grow: 1;
+
+}
+
+#faq .el .answer, #faq .el .plusSign{
+   flex-shrink: 0;
+}
+
+
+#faq .el .plusSign{
+   box-sizing: content-box;
+   width: 3em ;
+   height: 3em ;
+
+}
+
+#faq .el .plusSign * {
+   font-size: 2em;
+   color: white;
+   stroke: white !important;
+}
+
+
+
+/* testimonies styling */
+
+
+#testimonies .card{
+   background: #12143245;
+   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+   backdrop-filter: blur(6.9px);
+   -webkit-backdrop-filter: blur(6.9px);
+   border: 1px solid rgba(143, 132, 112, 0.4);
+   padding: 2em;
+   border-radius: 1em;
+   flex-grow: 1;
+   flex-shrink: 0;
+   height: 100%;
+}
+
+#testimonies .card .author{
+   display: flex;
+   gap: 1em;
+   align-items: center;
+   margin-bottom: 3rem;
+
+}
+
+#testimonies .card .author img{
+   width: 70px;
+   border-radius: 100vmax;
+}
+
+#testimonies .card .author .info{
+   display: flex;
+   flex-direction: column;
+   gap: .5em;
+   justify-content: start;
+}
+
+#testimonies .card .author .info .club{
+   color: #aaa;
+}
+
+#testimonies .card .core{
+   font-size: 1.5em;
+   flex-grow: 1;
+}
+
+
+.swiper{
+   overflow: unset;
+   overflow-x: hidden ;
+   padding-bottom: 10em;
+}
+
+.swiper-button-next, .swiper-button-prev {
+
+   /* top: unset; */
+   /* bottom: 2em; */
+   font-size: 3em;
+   position: relative;
+   color: var(--accent-color);
+}
+
+.swiper-button-next::after, .swiper-button-prev::after{
+   display: none;
+}
+
+.swiper .navigations{
+      display: flex;
+      gap: 3rem;
+      position: absolute;
+      right: 2em;
+      bottom: 2em;
+  
+}
+
+.swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
+   bottom: 2em;
+}
+
+.swiper-pagination-bullet {
+   background: var(--light1);
+}
+
+.swiper-pagination-bullet-active {
+   background: var(--accent-color);
 }

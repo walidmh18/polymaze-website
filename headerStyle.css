@@ -8,11 +8,11 @@ header{
    justify-content: space-between;
    align-items: center;
    background: #12143245;
-   border-radius:  0  0 1em 1em;
    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
    backdrop-filter: blur(6.9px);
    -webkit-backdrop-filter: blur(6.9px);
    border-bottom: 1px solid rgba(143, 132, 112, 0.4);
+   border-radius:  0  0 1em 1em;
    padding: 1em clamp(2em, 10vw, 15em);
    height: 10vh;
    z-index: 10;
