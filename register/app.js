@@ -3,15 +3,15 @@
 
 const soloInp = document.querySelector('#tsolo')
 const teamInp = document.querySelector('#tteam')
-const teamContainer = document.querySelector('.teamMembers')
+const teamContainer = document.querySelector('.step2 .container')
 const teamMembersN = document.querySelector('#teamMembersN')
 
 
-soloInp.addEventListener('input', () => {
-   teamContainer.innerHTML = ''
-   updateMembers()
-   updateNumOfMembers(0)
-})
+// soloInp.addEventListener('input', () => {
+//    teamContainer.innerHTML = ''
+//    updateMembers()
+//    updateNumOfMembers(0)
+// })
 
 // teamInp.addEventListener('input', ()=>{
 
@@ -19,75 +19,169 @@ soloInp.addEventListener('input', () => {
 
 function createNewMemberInp(n) {
    let memberContainer = document.createElement('div')
-   memberContainer.classList.add('member')
+   memberContainer.classList.add('teamMember')
+   memberContainer.classList.add(`teamMember${n}`)
 
    memberContainer.innerHTML = `
-   <div class="memberHeader">
-      <h2>Member <span class="memberIndex">${n + 2}</span></h2>
-      <button type="button" onclick="deleteMember(this.parentElement.parentElement)"><i class="fa-solid fa-user-minus"></i></button>
-   </div>
-   <h2>Personal Information</h2>
-               <div class="chunk">
-                  <div>
-                     <label for="m${n + 2}name" class="imp">Full Name</label>
-                     <input type="text" name="member${n + 2} full name" id="m${n + 2}name" placeholder="Full Name" required>
-                     <label for="m${n + 2}email" class="imp">Email address</label>
-                     <input type="email" name="member${n + 2} email" id="m${n + 2}email" placeholder="Email" required>
-               
-   
-                  </div>
-                  <div>
-                     <label for="m${n + 2}phone" class="imp" >Phone Number</label>
-                     <input type="tel" name="member${n + 2} phone" id="m${n + 2}phone" placeholder="Phone Number" required>
-                     <div class="smallInps">
-                        <div>
-                           <label for="m${n + 2}wilaya">Wilaya</label>
-                           <input type="text" name="member${n + 2} wilaya" id="m${n + 2}wilaya" placeholder="Wilaya">
-                        </div>
-            
-                        <div>
-                           <label for="m${n + 2}bd">Date of birth</label>
-                           <input type="text" name="member${n + 2} birthday" id="m${n + 2}bd" placeholder="Date of Birth">
-                        </div>
-            
-                     </div>
-                  </div>
-               </div>
-   
+    
+  <h2>Member ${n}</h2>
+        
+  <h2>Personal Information</h2>
+  <div class="chunk">
+    <div>
+      <label for="m${n}name" class="imp">Full Name</label>
+      <input
+        type="text"
+        name="member${n} full name"
+        id="m${n}name"
+        placeholder="Full Name"
+        required
+      />
+      <label for="m${n}email" class="imp">Email address</label>
+      <input
+        type="email"
+        name="member${n} email"
+        id="m${n}email"
+        placeholder="Email"
+        required
+      />
+      
+    </div>
+    <div>
+      <label for="m${n}phone" class="imp">Phone Number</label>
+      <input
+        type="tel"
+        name="member${n} phone"
+        id="m${n}phone"
+        placeholder="Phone Number"
+        required
+      />
+      <div class="smallInps">
+        <div>
+          <label for="m${n}wilaya" class="imp">Wilaya</label>
+          <input
+            required
+            type="text"
+            name="member${n} wilaya"
+            id="m${n}wilaya"
+            placeholder="Wilaya"
+          />
+        </div>
 
-               <h2>Educational Background</h2>
-   
-               <div class="chunk sndchunk">
-                  <div>
-                     <label for="m${n + 2}uni" class="imp">University/ School Name</label>
-                     <input type="text" name="member${n + 2} uni" id="m${n + 2}uni" placeholder="University / school" required>
-   
-                  </div>
-                  <div>
-                     <label for="m${n + 2}yos" class="imp">Year of study</label>
-                     <input type="text" name="member${n + 2} year of study" id="m${n + 2}yos" placeholder="Year of Study" required>
-   
-                  </div>
-               </div>
+        <div>
+          <label for="m${n}bd" class="imp">Date of birth</label>
+          <input
+            required
+            type="text"
+            name="member${n} birthday"
+            id="m${n}bd"
+            placeholder="Date of Birth"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h2>Educational Background</h2>
+
+  <div class="chunk sndchunk">
+    <div>
+      <label for="m${n}uni" class="imp">University/ School Name</label>
+      <input
+         
+        type="text"
+        name="member${n} uni"
+        id="m${n}uni"
+        placeholder="University / school"
+        required
+      />
+    </div>
+    <div>
+      <label for="m${n}yos" class="imp">Year of study</label>
+      <input
+        type="text"
+        name="member${n} year of study"
+        id="m${n}yos"
+        placeholder="Year of Study"
+        required
+      />
+    </div>
+  </div>
+
+  <div class="accommondationchose">
+    <div>
+      <p>Needs an accommodation (a place to stay)?</p>
+      <div class="radioInpContainer">
+        <label class="radioContainer">
+          <input
+            type="radio"
+            name="m${n} needs accomm"
+            id="m${n}py"
+            value="yes"
+            checked
+          />
+          <div class="checkmark"></div>
+        </label>
+        <label for="m${n}py">Yes</label>
+
+        <label class="radioContainer">
+          <input
+            type="radio"
+            name="m${n} needs accomm"
+            id="m${n}pn"
+            value="no"
+          />
+          <div class="checkmark"></div>
+        </label>
+        <label for="m${n}pn">No</label>
+      </div>
+    </div>
+  </div>
+
    
    `
    teamContainer.append(memberContainer)
 }
 
+
+
+
 function addMember() {
+   let mCount = document.querySelector('#mcount')
+   let currmm = parseInt(mCount.value)
+   console.log(currmm);
 
-   let teamMembersContainer = document.querySelectorAll('.teamMembers .member')
-
-   let NumOfMembers = teamMembersContainer.length
-   console.log(NumOfMembers);
-   if (NumOfMembers < 3) {
-
-      createNewMemberInp(NumOfMembers)
-      updateNumOfMembers(NumOfMembers + 1)
+   if (currmm <4 && currmm>0) {
+      mCount.value++
    }
-   updateMembers()
+
+
+   // let teamMembersContainer = document.querySelectorAll('.teamMembers .teamMember')
+
+   // let NumOfMembers = teamMembersContainer.length
+   // console.log(NumOfMembers);
+   // if (NumOfMembers < 3) {
+
+   //    createNewMemberInp(NumOfMembers)
+   //    updateNumOfMembers(NumOfMembers + 1)
+   // }
+   // updateMembers()
    teamInp.checked = true
 
+}
+
+function redMember(){
+   let mCount = document.querySelector('#mcount')
+   let currmm = parseInt(mCount.value)
+   console.log(currmm);
+
+   if(currmm == 2){
+   soloInp.checked = true
+
+   }
+   if (currmm <=4 && currmm>1) {
+      mCount.value--
+   }
 }
 
 // addMember()
@@ -144,22 +238,194 @@ function replaceChar(string, i1, i2) {
 
 // console.log(replaceChar('walid1d', 1, 2));
 
+const step0 = document.querySelector('.step.step0')
+const step1 = document.querySelector('.step.step1')
+const step2 = document.querySelector('.step.step2')
+const step3 = document.querySelector('.step.step3')
+const fill = document.querySelector('.progress .fill')
+const circleInfo = document.querySelector('.circle.info')
+const circleUsers = document.querySelector('.circle.users')
+const circleBook = document.querySelector('.circle.book')
+
+function nextSlide(el) {
+
+
+   let mCount = document.querySelector('#mcount')
+   let currmm = parseInt(mCount.value)
+
+   
+   let currStep = el.dataset.step;
+
+   let teamMembers = document.querySelectorAll('.step2 .teamMember')
+
+   
+
+   if(verifyStep(el) == 1){
+
+      scrollTo({
+         top: 0,
+         behavior: 'smooth'
+      })
+      if(currStep == 0){
+         step0.style.display = 'none'
+         step1.style.display = 'block'
+         fill.setAttribute('data-progress', 1)
+
+         circleInfo.classList.add('active')
+         circleUsers.classList.remove('active')
+         circleBook.classList.remove('active')
+      }
+   
+      if(currStep == 1){
+         step1.style.display = 'none'
+         step2.style.display = 'block'
+         fill.setAttribute('data-progress', 2)
+
+         circleInfo.classList.add('active')
+         circleUsers.classList.add('active')
+         circleBook.classList.remove('active')
+
+
+         teamMembers.forEach(m=>{
+            m.remove()
+         })
+      
+      for(let i=1; i<=currmm;i++){
+         createNewMemberInp(i)
+      }
+
+      }
+   
+      if(currStep == 2){
+         step2.style.display = 'none'
+         step3.style.display = 'block'
+         fill.setAttribute('data-progress', 3)
+
+         circleInfo.classList.add('active')
+         circleUsers.classList.add('active')
+         circleBook.classList.add('active')
+      }
+
+   }
+   console.log(verifyStep(el));
+}
+
+
+function prevSlide(el){
+   let currStep = el.dataset.step;
+
+   
+
+   if(currStep == 1){
+      step1.style.display = 'none'
+      step0.style.display = 'flex'
+
+      fill.setAttribute('data-progress', 0)
+
+         circleInfo.classList.remove('active')
+         circleUsers.classList.remove('active')
+         circleBook.classList.remove('active')
+   }
+
+   if(currStep == 2){
+      step2.style.display = 'none'
+      step1.style.display = 'block'
+
+      fill.setAttribute('data-progress', 1)
+
+         circleInfo.classList.add('active')
+         circleUsers.classList.remove('active')
+         circleBook.classList.remove('active')
+   }
+   if(currStep == 3){
+      step3.style.display = 'none'
+      step2.style.display = 'block'
+
+      fill.setAttribute('data-progress', 2)
+
+         circleInfo.classList.add('active')
+         circleUsers.classList.add('active')
+         circleBook.classList.remove('active')
+   }
+}
+
+function verifyStep(el) {
+   let r = 1
+   
+
+   let divInputs = el.querySelectorAll('input[required]:not([type="radio"])')
+   divInputs.forEach(inp=>{
+      if(inp.value ==''){
+
+         inp.classList.add('red')
+         r=0
+      }
+   })
+   return r
+}
+
+document.querySelectorAll('input').forEach(input=>{
+   input.addEventListener('input', () => {
+      input.classList.remove('red')
+   })
+})
+// console.log('asd');
+const yesnos = document.querySelectorAll('.step3 .chunk > div')
+// console.log(document.querySelectorAll('.experiences'));
+
+yesnos.forEach(c => {
+   console.log(c);
+   let yes = c.querySelector('input[value="yes"]')
+
+   let no = c.querySelector('input[value="no"]')
+   let more = c.querySelector('.moreInfo')
+   console.log(more);
+   no.addEventListener('input', () => {
+      more.style.display = 'none'
+      console.log('..');
+      more.querySelector('input').required = false
+   })
+
+   yes.addEventListener('input', () => {
+      more.style.display = 'flex'
+      more.querySelector('input').setAttribute('required', '')
+   })
+})
+
+
+
+// FORM
+
 
 
 
 let form = document.querySelector('form');
+let submitBtn = document.querySelector('button[type="submit"]')
 form.addEventListener("submit", e => {
-   
+   submitBtn.classList.add('clicked');
+   submitBtn.setAttribute('disabled', true)
    e.preventDefault();
+
+
    fetch(form.action, {
       method: "POST",
       body: new FormData(form),
    }).then(
       response => response.json()
    ).then((html) => {
+      let membersarr = []
+      let membersCount = parseInt(document.querySelector('input#mcount').value)
+      const teamNameInp = document.querySelector('input#teamName')
+
+      for (let i = 1; i <= membersCount; i++) {
+         let fullName = document.querySelector(`input#m${i}name`).value;
+         let email = document.querySelector(`input#m${i}email`).value;
+         membersarr.push({fullName:fullName,email:email});
+
+      }
+      
       const m1nameInp = document.querySelector('input#m1name')
       const m1emailInp = document.querySelector('input#m1email')
-      const teamNameInp = document.querySelector('input#teamName')
       let teamMembersContainer = document.querySelectorAll('.teamMembers .member')
       let members = []
       for (let i = 0; i < [...teamMembersContainer].length; i++) {
@@ -188,11 +454,44 @@ form.addEventListener("submit", e => {
          </style>
       </head>
       <div class="email" >
-      <h1 style="color: red;">thank you!</h1>
-      <p style="color: blue;">hi walid you are successfully registered</p>
-      <a href="https://www.facebook.com">facebook</a>
+      Dear [Participant's Name],
+
+We are pleased to confirm that your registration for PolyMaze 2024 has been successfully received. Your application is now officially submitted!
+
+We wish you the best of luck with the selection process. If you have any further questions or concerns, please don't hesitate to contact us via our platforms
+
+Best regards,
     </div>`
-      sendEmail(msg,msgObj.email)
+
+
+    membersarr.forEach(member=>{
+      let msg = `
+      <head>
+         <style>
+            .email{
+               background: grey;
+            }
+         </style>
+      </head>
+      <div class="email" >
+      Dear <strong>${member.fullName}</strong>,
+
+We are pleased to confirm that your registration for PolyMaze 2024 has been successfully received. Your application is now officially submitted!
+
+We wish you the best of luck with the selection process. If you have any further questions or concerns, please don't hesitate to contact us via our platforms
+
+Best regards,
+    </div>`
+      let msgObj = {
+         name:member.fullName,
+         email:member.email,
+         teamName:teamNameInp.value,
+         
+         
+   
+         }
+       sendEmail(msg,msgObj.email)
+    })
       window.open('../page.html', '_blank');
 
    }).catch(err => {
@@ -204,25 +503,7 @@ form.addEventListener("submit", e => {
 
 // yes/no inputs pop out
 
-const yesnos = document.querySelectorAll('.experiences .chunk > div')
-// console.log(yesnos);
-yesnos.forEach(c => {
-   console.log(c);
-   let yes = c.querySelector('input[value="yes"]')
-   let no = c.querySelector('input[value="no"]')
-   let more = c.querySelector('.moreInfo')
-   console.log(more);
-   no.addEventListener('input', () => {
-      more.style.display = 'none'
-      console.log('..');
-      more.querySelector('input').required = false
-   })
 
-   yes.addEventListener('input', () => {
-      more.style.display = 'flex'
-      more.querySelector('input').setAttribute('required', '')
-   })
-})
 
 
 // Require:
@@ -239,11 +520,11 @@ function sendEmail(obj ,email){
       From : "walid.mahmoudi1248@gmail.com",
       FromName: "POLYMAZE REGESTRATION",
 
-      Subject : "Successfully registrated",
+      Subject : "Subject: Confirmation of Registration for PolyMaze 2024",
       TemplateName: "C",
       Body : obj
   }).then(
-    message => alert(message)
+    message => console.log(message)
   );
 
 }

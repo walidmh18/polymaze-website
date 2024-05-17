@@ -1,3 +1,20 @@
+const loader = document.querySelector('.loader')
+
+document.onreadystatechange = () => {
+   if (document.readyState === 'complete') {
+     setTimeout(() => {
+      loader.style.display = 'none'
+     }, 3000);
+   }
+ };
+
+
+ setTimeout(() => {
+   loader.style.display = 'none'
+   
+ }, 8000);
+
+
 const logo = document.querySelector('img#animatedLogo')
 const polymaze = document.querySelector('#polymaze');
 const screenH = screen.height;
@@ -37,10 +54,10 @@ function sliderScroll(slider, speed, y){
    slider.scroll(y/speed,0);
 }
 
-// setInterval(() => {
+setInterval(() => {
       
-//    document.querySelector("spline-viewer").shadowRoot.querySelector('a').style.display = 'none'
-//    }, 1200);
+   document.querySelector("spline-viewer").shadowRoot.querySelector('a').style.display = 'none'
+   }, 1200);
 
 
 
@@ -191,3 +208,31 @@ var swiper = new Swiper(".mySwiper", {
      prevEl: ".swiper-button-prev",
    },
  });
+
+
+
+
+let ytbanim = lottie.loadAnimation({
+   container: document.querySelector('.ytblogo'),
+   renderer: 'svg',
+   loop: false,
+   autoplay:false,
+   path: "./assets/YouTube/youtube-2.json"
+})
+console.log(document.querySelector('.ytblogo'))
+
+// ytbanim.setDirection(1)
+// ytbanim.play()
+
+
+let ytbBtn = document.querySelector('.homeBtns .button')
+
+ytbBtn.addEventListener('mouseenter',() => {
+   ytbanim.setDirection(1)
+   ytbanim.play()
+})
+
+ytbBtn.addEventListener('mouseleave',() => {
+   ytbanim.setDirection(-1)
+   ytbanim.play()
+})
