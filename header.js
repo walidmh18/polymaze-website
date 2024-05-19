@@ -16,12 +16,12 @@ let animItem = lottie.loadAnimation({
 });
 
 function navToggle() {
-   navToggleAnim(animDirection)
+   navToggleAnima(animDirection)
    animDirection = -1 * animDirection
    header.classList.toggle('active')
 }
 
-function navToggleAnim(dir) {
+function navToggleAnima(dir) {
    animItem.setDirection(dir)
    animItem.play()
 }

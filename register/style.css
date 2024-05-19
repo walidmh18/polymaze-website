@@ -455,7 +455,7 @@ form button[type="submit"].clicked .loading .el{
 .step{
    display: none;
    height: 100%;
-   flex-grow: 1;
+   /* flex-grow: 1; */
    justify-content: space-between;
 }
 

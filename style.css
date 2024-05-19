@@ -11,9 +11,10 @@
    font-weight: normal;
    src: local('Coolvetica'), url('./assets/font/coolvetica/coolvetica\ condensed\ rg.otf') format('opentype');
  }
+ @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 html{
-   /* scroll-behavior: smooth; */
+   scroll-padding-top: 10vh;
 }
 
 ::-webkit-scrollbar{
@@ -49,7 +50,7 @@ html{
 
 
 *{
-   font-family: 'Coolvetica', sans-serif;
+   font-family: 'Montserrat', sans-serif;
    padding: 0;
    margin: 0;
    box-sizing: border-box;
@@ -83,11 +84,11 @@ body{
    background: var(--dark1);
    color: var(--light1);
    overflow-x: hidden;
-   font-size: 17px;
+   font-size: 16px;
 }
 h1{
-   letter-spacing: 2px;
    font-size: 2em;
+   font-weight: 700;
 }
 p{
    font-size: 1.2em;
@@ -103,7 +104,7 @@ span{
 
 
 section{
-   padding: 1em clamp(2em, 10vw, 15em);
+   padding: 1em clamp(2em, 7vw, 15em);
    margin: 0 0 10vh ;
 }
 
@@ -121,25 +122,25 @@ section{
    border-radius: 1em;
    border: var(--accent-color) 2px solid;
    transition: 0.3s;
-   padding: 1em 2rem;
+   padding: 1em 2em;
    font-size: 1.2em;
 
 }
 
 .registerBtn span{
    color: var(--light1);
-   margin-right: 0.8rem;
+   margin-right: 0.8em;
    transition: 0.3s;
 }
 .registerBtn:hover{
    color: var(--accent-color);
    background: none;
-   padding: 1em 1.3rem 1em 2rem;
+   padding: 1em 1.3em 1em 2em;
 
 }
 
 .registerBtn:hover span{
-   margin-right: 1.5rem;
+   margin-right: 1.5em;
    color: var(--accent-color);
 }
 
@@ -216,7 +217,7 @@ h2.sectionTitle{
    color: var(--accent-color);
    position: relative;
    padding: 0.5em 0;
-   letter-spacing: 1px;
+   font-weight: 700;
 }
 
 h2.sectionTitle::after{
@@ -245,35 +246,36 @@ h2 img{
    grid-template-columns: repeat(2,1fr);
    align-items: center;
    gap: 3em;
-   height: 100vh;
+   min-height: 100vh;
    position: relative;
 }
 
 section.hasLights{
    position: relative;
+
 }
 
 section.hasLights::after, section.hasLights::before{
    content: '';
    position: absolute;
-   width: 150vh;
-   height: 150vh;
+   width: min(70vh, 100vw);
+   height: min(150vh,150vw);
    opacity: 0.1;
    z-index: -5;
    filter: blur(10px);
 }
 
 section.hasLights::after{
-   background: radial-gradient(var(--blue), #00000000 70%);
+   background: radial-gradient(at left , var(--blue), #00000000 70%);
    
-   bottom: -70vh;
-   left: -70vh;
+   bottom: max(-70vh, -100vw);
+   left: 0vh;
 }
 
 section.hasLights::before{
-   background: radial-gradient(var(--red), #00000000 70%);
-   top: -70vh;
-   right: -70vh;
+   background: radial-gradient(at right, var(--red), #00000000 70%);
+   top: max(-70vh, -100vw);
+   right: 0;
    z-index: 5;
 
 }
@@ -336,18 +338,19 @@ section.hasLights::before{
    z-index: 20;
    position: relative;
    text-align: center;
-   font-size: 2.4em;
+   font-size: 5em;
    font-weight: 400;
 }
 
 #countdown .container{
 
    display: flex;
-   gap: 5rem;
-   font-size: 5rem;
+   gap: 1em;
+   /* font-size: 5em; */
    justify-content: center;
    margin-bottom: 0.5rem;
 }
+
 
 #countdown .container p{
    position: relative;
@@ -356,7 +359,7 @@ section.hasLights::before{
 #countdown .container p:after{
    content: 'ad';
    color: var(--accent-color);
-   font-size: 2rem;
+   font-size: 0.2em;
    font-weight: 400;
    position: absolute;
    left: 50%;
@@ -391,9 +394,7 @@ section.hasLights::before{
 }
 
 
-#polymaze .sectionTitle{
-   margin-top: 5rem;
-}
+
 
 #polymaze .slider{
    position: relative;
@@ -442,8 +443,8 @@ section.hasLights::before{
 
 #register p{
    font-size: 1.6em;
-   padding: 0.5em 4rem 1em;
-   margin:  1.5em 2rem ;
+   padding: 0.5em 2em 1em;
+   margin:  1.5em 1em ;
 }
 
 #register p:not(:last-child){
@@ -453,7 +454,7 @@ section.hasLights::before{
 
 #register h3{
    font-size: 2em;
-   padding: 0 5.5rem;
+   padding: 0 3em;
    position: relative;
 }
 
@@ -472,9 +473,9 @@ section.hasLights::before{
    transform: translateY(-50%);
 }
 
-#register .registerBtn{
+/* #register .registerBtn{
    float: right;
-}
+} */
 
 
 
@@ -516,15 +517,14 @@ section.hasLights::before{
 
 #faq .el .answer{
    font-size: 1.6em;
-   font-weight: 300;
-   font-family: 'Coolvetica light', sans-serif;
-   letter-spacing: 1px;
+   font-weight: 400;
+   
 }
 
 #faq .el .question{
    font-size: 2em;
    padding: 2rem 1.5rem;
-   
+   font-weight: 600;
 }
 
 #faq .el .content{
@@ -602,6 +602,7 @@ section.hasLights::before{
    overflow: unset;
    overflow-x: hidden ;
    padding-bottom: 10em;
+   
 }
 
 .swiper-button-next, .swiper-button-prev {
@@ -636,4 +637,144 @@ section.hasLights::before{
 
 .swiper-pagination-bullet-active {
    background: var(--accent-color);
+}
+
+
+#specialThanks img{
+   max-width: 100%;
+   width: 300px;
+   margin: 3em 0;
+}
+
+#specialThanks a{
+   color: var(--accent-color);
+   text-decoration: underline;
+   cursor: pointer;
+}
+
+footer.glass{
+   border: none;
+   border-top: 1px solid rgba(222, 234, 178, 0.4);
+   border-radius: 1em 1em 0 0 ;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 1em clamp(2em, 10vw, 15em);
+
+}
+
+footer .socials{
+   display: flex;
+   color: white;
+   font-size: 40px;
+   gap: 1em;
+}
+
+footer img{
+   height: 50px;
+}
+
+@media screen and (max-width: 1440px) {
+   body{
+      font-size: 15px;
+   }
+   #polymaze .slider img {
+      width: 270px;
+   }
+}
+
+@media screen and (max-width: 1024px) {
+   body{
+      font-size: 13px;
+   }
+   h1.sectionTitle{
+      margin-top: 2em;
+   }
+
+   #polymaze .slider img {
+      width: 220px;
+   }
+}
+
+
+@media screen and (max-width: 768px) {
+   body{
+      font-size: 12px;
+   }
+
+   section{
+      padding: 1em clamp(2em, 6vw, 15em);   
+   }
+
+   .glass{
+      padding: 4vh 2em;
+   }
+   h2{
+      margin-top: 1.5em;
+
+   }
+
+   .chunk ~ h2{
+      margin-bottom: 2em;
+   }
+
+   #home {
+      grid-template-columns: repeat(1,1fr);
+   }
+
+   #home .right{
+      order: 1;
+   }
+   #home .left{
+      order: 2;
+   }
+
+   spline-viewer{
+      height: 100vh;
+      position: relative;
+   }
+
+   spline-viewer::after{
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      content: '';
+      left: 0;
+      top: 0;
+   }
+
+   #polymaze .slider img {
+      width: 190px;
+   }
+
+   #register h3{
+      padding: 0 2.5em;
+   }
+
+   #countdown .container, #countdown h2 {
+      font-size: 4em;
+   }
+}
+
+
+
+@media screen and (max-width: 500px) {
+   body{
+      font-size: 10.5px;
+   }
+
+   section{
+      padding: 1em clamp(2em, 4vw, 10em);   
+   }
+
+   .glass{
+      padding: 2vh 1.4em;
+   }
+
+   .smallInps , .chunk.sndchunk{
+      grid-template-columns: repeat(1, 1fr);
+  }
+  #polymaze .slider img {
+   width: 140px;
+}
 }

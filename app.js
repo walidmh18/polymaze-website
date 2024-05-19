@@ -35,18 +35,11 @@ addEventListener('scroll', () => {
       let d = p*(slider1.scrollWidth - slider1.offsetWidth);
       slider1.scrollTo((slider2.scrollWidth / 2) - (slider2.offsetWidth /2) -d/3 ,0)
       slider2.scrollTo((slider2.scrollWidth / 2) - (slider2.offsetWidth /2) + d/3,0)
-      // slider1.scroll(100/5,Y)
-      // console.log(p,d, slider1.scrollWidth,polymaze.offsetTop ,Y);
-      // console.log(((slider2.scrollWidth / 2) - (slider2.offsetWidth /2),0) -d);
-      // console.log(((slider2.scrollWidth / 2) - (slider2.offsetWidth /2),0) +d);
+      
 
 
    }
 
-   // console.log(Y);
-
-   // sliderScroll(slider1,5,Y)
-   // sliderScroll(slider1,-5,Y)
 })
 
 
@@ -141,7 +134,7 @@ function showFaq(faq){
 
    }
 
-   console.log(activeFaqs);
+   // console.log(activeFaqs);
    navToggleAnim(dirs[index], faq, index)
    dirs[index] *= -1
 
@@ -188,8 +181,15 @@ function navToggleAnim(dir , element, i) {
 
 // swiper
 
+
+const width = screen.width -200;
+
+let slidesPerView= Math.ceil(width/600);
+console.log(slidesPerView);
+
+
 var swiper = new Swiper(".mySwiper", {
-   slidesPerView: 3,
+   slidesPerView: slidesPerView,
    spaceBetween: 30,
    centeredSlides: true,
    loop:true,

@@ -260,7 +260,7 @@ function nextSlide(el) {
 
    
 
-   if(verifyStep(el) == 1){
+   if(verifyStep(el) == true){
 
       scrollTo({
          top: 0,
@@ -350,7 +350,7 @@ function prevSlide(el){
 }
 
 function verifyStep(el) {
-   let r = 1
+   let r = true
    
 
    let divInputs = el.querySelectorAll('input[required]:not([type="radio"])')
@@ -358,14 +358,16 @@ function verifyStep(el) {
       if(inp.value ==''){
 
          inp.classList.add('red')
-         r=0
-      }
+         r=false
+      } 
+     
    })
    return r
 }
 
 document.querySelectorAll('input').forEach(input=>{
    input.addEventListener('input', () => {
+      console.log('asd');
       input.classList.remove('red')
    })
 })
@@ -391,7 +393,6 @@ yesnos.forEach(c => {
       more.querySelector('input').setAttribute('required', '')
    })
 })
-
 
 
 // FORM
@@ -466,22 +467,131 @@ Best regards,
 
     membersarr.forEach(member=>{
       let msg = `
-      <head>
-         <style>
-            .email{
-               background: grey;
-            }
-         </style>
-      </head>
-      <div class="email" >
-      Dear <strong>${member.fullName}</strong>,
+      <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Email Template</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap');
+body{
+    margin: auto;
+}
+.container{
+    max-width: 500px;
+    margin: auto;
+    position: relative;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+    .container {
+        background: linear-gradient(to bottom, black, rgb(37, 43, 5));
+        font-family: 'Roboto Condensed', sans-serif;
+        overflow-y: scroll;
+    }
+    
+    header {
+        width: 100%;
+        background-color: black;
+        color: white;
+        margin: 0;
+        
+        
+        z-index: 1;
+    }
+    header .club img{
+        margin: 10px;
+        height: 3rem;
+        object-fit: contain;
+    }
+    header .club .maze {
+        width: 170px;
+        border: 0;
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+    header .club .vic {
+        width: 170px;
+        border: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    .social img {
+        width: 60px;
+    }
+    
+    .social {
+        display: flex;
+        justify-content: center; 
+        gap: 10px; 
+        margin-bottom: 10px;
+    }
 
-We are pleased to confirm that your registration for PolyMaze 2024 has been successfully received. Your application is now officially submitted!
+    .social a{
+        color: aliceblue;
+        font-size: 2rem;
+    }
+    
+    footer .social {
+        margin-top: 3rem;
+        width: 100%;
+    }
+    
+    .text {
+        margin: 20px;
+        padding: 120px 0;
+    }
+    
+    span {
+        color: rgb(191, 224, 8);
+        font-weight: bold;
+    }
+    
+    p {
+        font-size: 1.2em;
+        color: aliceblue;
+    }
+    
+    
 
-We wish you the best of luck with the selection process. If you have any further questions or concerns, please don't hesitate to contact us via our platforms
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-Best regards,
-    </div>`
+</head>
+<body>
+    <div class="container">
+        <header> 
+            <div class="club">
+                <img src="polymaze.vic-enp.com/assets/logo h-02" alt="head" class="maze">
+                <img src="polymaze.vic-enp.com/assets/vic_logo"alt="" class="vic">
+            </div>
+        </header>
+        <section class="text">
+            <p>
+                Dear [Participant's Name],<br><br> <br>
+                We are pleased to confirm that your registration for <span>POLYMAZE 2024</span> has been successfully received. Your application is now officially submitted!<br>
+                We wish you the best of luck with the selection process.<br>
+                If you have any further questions or concerns, please don't hesitate to contact us via our platforms.<br><br> <br> <br>
+                Best regards,<br>
+            </p>
+        </section>
+        <footer>
+            <div class="social">
+                <a href="https://www.facebook.com/vic.enpa"><img src ="polymaze.vic-enp.com/email/images/facebook.png"></a>
+                <a href="https://www.instagram.com/vic.enp/"><img src ="polymaze.vic-enp.com/email/images/insta.png">/a>
+                <a href="https://www.linkedin.com/company/vicenp/"><img src ="polymaze.vic-enp.com/email/images/inkedIn.png"></a>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
+`
       let msgObj = {
          name:member.fullName,
          email:member.email,
@@ -492,7 +602,7 @@ Best regards,
          }
        sendEmail(msg,msgObj.email)
     })
-      window.open('../page.html', '_blank');
+      window.open('../page.html', '_self');
 
    }).catch(err => {
       window.open('../error.html', '_blank')
@@ -517,7 +627,7 @@ function sendEmail(obj ,email){
       SecureToken : "f34bb377-0cbf-426f-be81-a3b134b910c1 ",
       
       To : email,
-      From : "walid.mahmoudi1248@gmail.com",
+      From : "polymaze@vic-enp.com",
       FromName: "POLYMAZE REGESTRATION",
 
       Subject : "Subject: Confirmation of Registration for PolyMaze 2024",
