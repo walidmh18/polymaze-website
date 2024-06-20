@@ -6,9 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML Email Template</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
 body{
     margin: auto;
+    box-sizing: border-box;
 }
 .container{
     max-width: 500px;
@@ -20,8 +21,8 @@ body{
     padding: 0;
 }
     .container {
-        background: linear-gradient(to bottom, black, rgb(37, 43, 5));
-        font-family: 'Roboto Condensed', sans-serif;
+        background: linear-gradient(to top, black, rgb(37, 43, 5));
+        font-family: 'Montserrat', sans-serif;
         overflow-y: scroll;
     }
     
@@ -34,44 +35,47 @@ body{
         
         z-index: 1;
     }
+    
+    .club{
+        width:100%;
+    }
+    
     header .club img{
         margin: 10px;
         height: 3rem;
         object-fit: contain;
+        max-width: 30%;
+        width:120px;
     }
     header .club .maze {
         width: 170px;
         border: 0;
         position: absolute;
         top: 0;
-        right: 0;
+        left: 50%;
+        transform: translateX(-50%);
     }
-    header .club .vic {
-        width: 170px;
-        border: 0;
-        position: absolute;
-        top: 0;
-        left: 0;
-    }
+    
     .social img {
-        width: 60px;
+        width: 30px;
     }
     
     .social {
         display: flex;
         justify-content: center; 
         gap: 10px; 
-        margin-bottom: 10px;
+        width:100%;
     }
 
     .social a{
         color: aliceblue;
-        font-size: 2rem;
+        font-size: 1rem;
     }
     
     footer .social {
-        margin-top: 3rem;
+        padding: 3rem;
         width: 100%;
+        justify-content: center;
     }
     
     .text {
@@ -95,28 +99,64 @@ body{
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 </head>
-<body>
-    <div class="container">
-        <header> 
-            <div class="club">
-                <img src="images/polymazze.png" alt="head" class="maze">
-                <img src="images/vic_logo.png" alt="" class="vic">
+<body style=" margin: auto;
+box-sizing: border-box;">
+    <div class="container" style="max-width: 500px;
+    margin: auto;
+    position: relative;
+    background: linear-gradient(to top, black, rgb(37, 43, 5));
+        font-family: 'Montserrat', sans-serif;
+        overflow-y: scroll;
+    ">
+        <header style="width: 100%;
+        background-color: black;
+        color: white;
+        margin: 0;
+        
+        
+        z-index: 1;"> 
+            <div class="club" style="width:100%;">
+                <img src="https://polymaze.vic-enp.com/assets/logopolymaze_h.png" alt="head" class="maze" style="margin: 10px;
+                height: 3rem;
+                object-fit: contain;
+                max-width: 30%;
+                width:120px;
+                width: 170px;
+        border: 0;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);">
+                
             </div>
         </header>
-        <section class="text">
-            <p>
-                Dear [Participant's Name],<br><br> <br>
-                We are pleased to confirm that your registration for <span>POLYMAZE 2024</span> has been successfully received. Your application is now officially submitted!<br>
+        <section class="text" style=" margin: 20px;
+        padding: 120px 0;">
+            <p style="font-size: 1.2em;
+            color: aliceblue;">
+                Dear ${member.fullName},<br><br> <br>
+                We are pleased to confirm that your registration for <span style="color: rgb(191, 224, 8);
+                font-weight: bold;">POLYMAZE 2024</span style="color: rgb(191, 224, 8);
+        font-weight: bold;"> has been successfully received. Your application is now officially submitted!<br><br>
                 We wish you the best of luck with the selection process.<br>
                 If you have any further questions or concerns, please don't hesitate to contact us via our platforms.<br><br> <br> <br>
                 Best regards,<br>
             </p>
         </section>
         <footer>
-            <div class="social">
-                <a href="https://www.facebook.com/vic.enpa"><i class="fa-brands fa-facebook"></i></a>
-                <a href="https://www.instagram.com/vic.enp/"><i class="fa-brands fa-instagram"></i></a>
-                <a href="https://www.linkedin.com/company/vicenp/"><i class="fa-brands fa-linkedin"></i></a>
+            <div class="social" style="display: flex;
+            justify-content: center; 
+            gap: 10px; 
+            width:100%;
+            padding: 3rem;
+        width: 100%;
+        justify-content: center;">
+                <a href="https://www.facebook.com/vic.enpa"  style="color: aliceblue;
+                font-size: 1rem;"><img src ="https://polymaze.vic-enp.com/email/images/facebook.png"></a>
+                <a href="https://www.instagram.com/vic.enp/" style="color: aliceblue;
+                font-size: 1rem;"><img src ="https://polymaze.vic-enp.com/email/images/insta.png"></a>
+                <a href="https://www.linkedin.com/company/vicenp/" style="color: aliceblue;
+                font-size: 1rem;"><img src ="https://polymaze.vic-enp.com/email/images/linkdin.png"></a>
             </div>
         </footer>
     </div>

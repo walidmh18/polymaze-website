@@ -1,0 +1,154 @@
+%!Adobe-FontList 1.23
+%Locale:0x40c
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Invalid
+OutlineFileName:C:\Users\Latitude\Desktop\desktop\design\it\polymaze\website\assets\Font\coolvetica.zip
+FileModTime:1715383041
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Invalid
+OutlineFileName:C:\Users\Latitude\Desktop\desktop\design\it\polymaze\website\assets\Font\coolvetica\Typodermic Desktop EULA 2023.pdf
+FileModTime:1674467720
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:CoolveticaCompressedHv-Regular
+FamilyName:Coolvetica
+StyleName:Compressed Heavy
+FullName:CoolveticaCompressedHv-Regular
+MenuName:Coolvetica Compressed Hv
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\Users\Latitude\Desktop\desktop\design\it\polymaze\website\assets\Font\coolvetica\coolvetica compressed hv.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:71372
+FileModTime:1648626800
+WeightClass:900
+WidthClass:2
+AngleClass:0
+NameArray:0,Mac,4,CoolveticaCompressedHv-Regular
+NameArray:0,Win,1,Coolvetica Compressed Hv
+NameArray:0,Win,16,Coolvetica
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:CoolveticaCondensedRg-Regular
+FamilyName:Coolvetica
+StyleName:Condensed Regular
+FullName:CoolveticaCondensedRg-Regular
+MenuName:Coolvetica Condensed Rg
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\Users\Latitude\Desktop\desktop\design\it\polymaze\website\assets\Font\coolvetica\coolvetica condensed rg.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:72616
+FileModTime:1648623152
+WeightClass:400
+WidthClass:3
+AngleClass:0
+NameArray:0,Mac,4,CoolveticaCondensedRg-Regular
+NameArray:0,Win,1,Coolvetica Condensed Rg
+NameArray:0,Win,16,Coolvetica
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:CoolveticaCrammedRg-Regular
+FamilyName:Coolvetica
+StyleName:Crammed Regular
+FullName:CoolveticaCrammedRg-Regular
+MenuName:Coolvetica Crammed Rg
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\Users\Latitude\Desktop\desktop\design\it\polymaze\website\assets\Font\coolvetica\coolvetica crammed rg.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:69944
+FileModTime:1648626806
+WeightClass:400
+WidthClass:1
+AngleClass:0
+NameArray:0,Mac,4,CoolveticaCrammedRg-Regular
+NameArray:0,Win,1,Coolvetica Crammed Rg
+NameArray:0,Win,16,Coolvetica
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:CoolveticaRg-Italic
+FamilyName:Coolvetica
+StyleName:Regular Italic
+FullName:CoolveticaRg-Italic
+MenuName:Coolvetica Rg
+StyleBits:1
+WritingScript:Roman
+OutlineFileName:C:\Users\Latitude\Desktop\desktop\design\it\polymaze\website\assets\Font\coolvetica\coolvetica rg it.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:71872
+FileModTime:1648623146
+WeightClass:400
+WidthClass:5
+AngleClass:1
+NameArray:0,Mac,4,CoolveticaRg-Italic
+NameArray:0,Win,1,Coolvetica Rg
+NameArray:0,Win,16,Coolvetica
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:CoolveticaRg-Regular
+FamilyName:Coolvetica
+StyleName:Regular
+FullName:CoolveticaRg-Regular
+MenuName:Coolvetica Rg
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\Users\Latitude\Desktop\desktop\design\it\polymaze\website\assets\Font\coolvetica\coolvetica rg.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:70876
+FileModTime:1648623146
+WeightClass:400
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,CoolveticaRg-Regular
+NameArray:0,Win,1,Coolvetica Rg
+NameArray:0,Win,16,Coolvetica
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Invalid
+OutlineFileName:C:\Users\Latitude\Desktop\desktop\design\it\polymaze\website\assets\Font\coolvetica\read-this.html
+FileModTime:1674490366
+%EndFont
+
